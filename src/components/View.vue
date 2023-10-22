@@ -12,12 +12,11 @@ const loading = ref(false)
 
 const fetchRelay = async () => {
   loading.value = true
+  inscriptionId.value = undefined
   let newName = route.params.name
   try {
     const response = await api.name.fetchNameInfo(newName)
-    if (!response.data.data || !response.data.data.relay) {
-      inscriptionId.value = undefined
-    } else {
+    if (!!response.data.data && !!response.data.data.relay) {
       inscriptionId.value = response.data.data.relay
     }
   } catch (err) {

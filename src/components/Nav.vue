@@ -11,7 +11,7 @@ const displayName = computed(() => route.params.name)
 <template>
   <div class="navbar bg-base-100">
     <div class="navbar-start">
-      <router-link class="btn btn-ghost normal-case text-xl" to="/">orbit.name</router-link>
+      <router-link class="btn btn-ghost normal-case text-xl" to="/">Orbit</router-link>
     </div>
     <div class="navbar-center">
       <p class="text-xl text-primary">{{ displayName }}</p>
