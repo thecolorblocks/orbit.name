@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const http = axios.create({
-  baseURL: 'https://orbit-server.pages.dev/api',
+  baseURL: 'https://api.orbit.name/api',
   headers: {
     'Accept': 'application/json',
   }

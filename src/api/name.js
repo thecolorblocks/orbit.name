@@ -6,6 +6,4 @@ const name = {
   }
 }
 
-export {
-  name,
-}
+export default name

@@ -11,7 +11,7 @@ const displayName = computed(() => route.params.name)
 <template>
   <div class="navbar bg-base-100">
     <div class="navbar-start">
-      <a class="btn btn-ghost normal-case text-xl">orbit.name</a>
+      <router-link class="btn btn-ghost normal-case text-xl" to="/">orbit.name</router-link>
     </div>
     <div class="navbar-center">
       <p class="text-xl text-primary">{{ displayName }}</p>
@@ -19,7 +19,7 @@ const displayName = computed(() => route.params.name)
     <div class="navbar-end">
       <div class="form-control">
         <div class="join">
-          <button class="btn btn-ghost join-item">sns://</button>
+          <button class="btn btn-primary join-item">sns://</button>
           <input 
             type="text" 
             placeholder="names" 
