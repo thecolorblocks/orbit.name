@@ -18,8 +18,8 @@ const list = ref([
       <div class="max-w-lg">
         <h1 class="text-4xl font-bold">Type name, <kbd class="kbd">enter</kbd> to view</h1>
         <p class="py-6">Or trying clicking <router-link class="link link-primary" to="/ordinals.art">ordinals.art</router-link></p>
-        <p class="py-12">Made for Bitcoin by <a class="link" target="_blank" href="https://twitter.com/thecolorblocks_">The Color Blocks</a></p>
-        <p class="py-12">Powered by <a class="link" target="_blank" href="https://geniidata.com">Genii Data</a></p>
+        <p class="pt-12 pb-4">Made for Bitcoin by <a class="link" target="_blank" href="https://twitter.com/thecolorblocks_">The Color Blocks</a></p>
+        <p class="pt-4 pb-12">Powered by <a class="link" target="_blank" href="https://geniidata.com">Genii Data</a></p>
         <p 
           class="py-4"
           v-for="l in list"
