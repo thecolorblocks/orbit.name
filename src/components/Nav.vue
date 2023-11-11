@@ -22,7 +22,7 @@ const displayName = computed(() => route.params.name)
           <button class="btn btn-primary join-item">sns://</button>
           <input 
             type="text" 
-            placeholder="names" 
+            :placeholder="!!route.params.name ? route.params.name : 'names'" 
             class="input input-bordered w-24 md:w-auto join-item" 
             v-model="name" 
             @keyup.enter="router.push(`/${name}`)" />

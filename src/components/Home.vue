@@ -6,7 +6,6 @@ const list = ref([
   'hellofelipe.sats',
   'bitcoin.paper',
   'taprootwzrd.sats',
-  'orpepen.sats',
   'cypherpunk.paper',
   'hellozin.sats',
 ])
