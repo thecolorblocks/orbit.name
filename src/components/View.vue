@@ -10,8 +10,10 @@ const inscriptionId = ref()
 const address = ref()
 const profile = ref()
 const pagination = ref({
-  cursor: 0,
-  size: 48
+  offset: 0,
+  limit: 24,
+  orderby: 'number',
+  order: 'asc',
 })
 const contentUrl = computed(() => 'https://ordinals.com/content/' + inscriptionId.value)
 const contentFrame = ref()
@@ -41,17 +43,22 @@ const fetchNameContent = async () => {
   }
 
   // If address is filled, fetch profile
-  if (!!address.value) await fetchNameProfile()
+  if (!!address.value) {
+    await fetchNameProfile()
+    profile.value.avatar = response.data.data.avatar
+  }
 
   loading.value = false
 }
 
 const fetchNameProfile = async () => {
   try {
-    const response = await api.address.fetchInscriptionsUTXO(
+    const response = await api.address.fetchInscriptions(
       address.value, 
-      pagination.value.cursor, 
-      pagination.value.size
+      pagination.value.offset, 
+      pagination.value.limit,
+      pagination.value.orderby,
+      pagination.value.order
     )
     // populate profile
     profile.value = {
@@ -59,15 +66,8 @@ const fetchNameProfile = async () => {
       address: address.value,
       items: []
     }
-    profile.value.items = response.data.data.utxo.map((utxo) => {
-      return {
-        inscriptionId: utxo.inscriptions[0].inscriptionId,
-        previewUrl: `https://ordinals.com/preview/${utxo.inscriptions[0].inscriptionId}`,
-        inscriptionNumber: utxo.inscriptions[0].inscriptionNumber,
-        utxoSize: utxo.satoshi
-      }
-    })
-    console.log(profile.value)
+    profile.value.items = response.data.results
+    console.log(profile.value.items)
   } catch (err) {
     console.log(err)
   }

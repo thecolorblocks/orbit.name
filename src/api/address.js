@@ -1,8 +1,8 @@
 import http from './http'
 
 const address = {
-  fetchInscriptionsUTXO: (address, cursor, size) => {
-    return http.get(`/address/${address}?cursor=${cursor}&size=${size}`)
+  fetchInscriptions: (address, offset, limit, orderby, order) => {
+    return http.get(`/address/${address}?offset=${offset}&limit=${limit}&order_by=${orderby}&order=${order}`)
   }
 }
 
