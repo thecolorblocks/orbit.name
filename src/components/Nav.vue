@@ -11,7 +11,7 @@ const displayName = computed(() => route.params.name)
 <template>
   <div class="navbar bg-base-100">
     <div class="navbar-start">
-      <router-link class="btn btn-ghost normal-case text-xl" to="/">Orbit</router-link>
+      <router-link class="btn btn-ghost normal-case text-lg btn-sm" to="/">Orbit</router-link>
     </div>
     <div class="navbar-center">
       <p class="text-xl text-primary">{{ displayName }}</p>
@@ -19,11 +19,11 @@ const displayName = computed(() => route.params.name)
     <div class="navbar-end">
       <div class="form-control">
         <div class="join">
-          <button class="btn btn-primary join-item">sns://</button>
+          <button class="btn btn-primary btn-sm join-item">sns://</button>
           <input 
             type="text" 
             :placeholder="!!route.params.name ? route.params.name : 'names'" 
-            class="input input-bordered w-24 md:w-auto join-item" 
+            class="input input-bordered input-sm w-24 md:w-auto join-item" 
             v-model="name" 
             @keyup.enter="router.push(`/${name}`)" />
         </div>

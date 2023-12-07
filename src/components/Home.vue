@@ -2,12 +2,33 @@
 import { ref } from 'vue'
 
 const list = ref([
+  'p5paint.sats',
   '2048.game',
-  'hellofelipe.sats',
   'bitcoin.paper',
-  'taprootwzrd.sats',
   'cypherpunk.paper',
-  'hellozin.sats',
+])
+
+const curatedList = ref([
+  {
+    title: 'The Ordinals Art Museum 1.0',
+    sns: 'ordinals.art'
+  },
+  {
+    title: 'P5Paint: Pixel Art Maker',
+    sns: 'p5paint.sats'
+  },
+  {
+    title: 'Play 2048 on Bitcoin',
+    sns: '2048.game'
+  },
+  {
+    title: 'Bitcoin Whitepaper, on Bitcoin',
+    sns: 'bitcoin.paper'
+  }, 
+  {
+    title: 'Cypherpunk Manifesto',
+    sns: 'cypherpunk.paper'
+  }
 ])
 </script>
 
@@ -15,16 +36,20 @@ const list = ref([
   <div class="hero min-h-screen bg-base-200">
     <div class="hero-content text-center">
       <div class="max-w-lg">
-        <h1 class="text-4xl font-bold">Type name, <kbd class="kbd">enter</kbd> to view</h1>
-        <p class="py-6">Or trying clicking <router-link class="link link-primary" to="/ordinals.art">ordinals.art</router-link></p>
-        <p class="pt-12 pb-4">Made for Bitcoin by <a class="link" target="_blank" href="https://twitter.com/thecolorblocks_">The Color Blocks</a></p>
-        <p class="pt-4 pb-12">Powered by <a class="link" target="_blank" href="https://geniidata.com">Genii Data</a></p>
-        <p 
+        <section 
           class="py-4"
-          v-for="l in list"
-          :key="l">
-          <router-link class="link" :to="`/${l}`">{{ l }}</router-link>
-        </p>
+          v-for="l in curatedList"
+          :key="l.sns">
+          <h6 class="text-xl font-bold text-primary">
+            {{ l.title }}
+          </h6>
+          <p>
+            <router-link class="link text-accent" :to="`/${l.sns}`">{{ l.sns }}</router-link>
+          </p>
+        </section>
+        <p class="pt-12 pb-2">Made for Bitcoin by <a class="link" target="_blank" href="https://twitter.com/thecolorblocks_">The Color Blocks</a></p>
+        <p class="py-2">Powered by <a class="link" target="_blank" href="https://geniidata.com">Genii Data</a></p>
+        <p class="pt-2">What are <a class="link" target="_blank" href="https://docs.satsnames.org/sats-names/about">Sats Names</a>?</p>
       </div>
     </div>
   </div>
