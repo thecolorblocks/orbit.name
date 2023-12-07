@@ -47,7 +47,7 @@ const curatedList = ref([
             <router-link class="link text-accent" :to="`/${l.sns}`">{{ l.sns }}</router-link>
           </p>
         </section>
-        <p class="pt-12 pb-2">Made for Bitcoin by <a class="link" target="_blank" href="https://twitter.com/thecolorblocks_">The Color Blocks</a></p>
+        <p class="pt-12 pb-2">Orbit is made by <a class="link" target="_blank" href="https://twitter.com/thecolorblocks_">The Color Blocks</a></p>
         <p class="py-2">Powered by <a class="link" target="_blank" href="https://geniidata.com">Genii Data</a></p>
         <p class="pt-2">What are <a class="link" target="_blank" href="https://docs.satsnames.org/sats-names/about">Sats Names</a>?</p>
       </div>
